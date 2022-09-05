@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/hawaste?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+  thymeleaf:
+    prefix: classpath:/templates/
+    cache: false
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+server:
+  port: 8089
+minio:
+  bucketName: uploads # 存储桶名字
+  endpoint: 127.0.0.1 #桶所在节点ip
+  port: 9000      # web管理服务访问端口
+  secure: false  #false为http   true为 https
+  accessKey: minioadmin #登录账号
+  secretKey: minioadmin #密码
+pic:
+  prefix: http://localhost:80/uploads #图片访问路径前缀
+shiro:
+  loginUrl: /login.html #未认证用户跳转到登录的页面请求
+  successUrl: /         #认证成功用户的跳转页面请求地址
+  unauthorizedUrl: /notauth.html #无访问权限用户的请求跳转地址
